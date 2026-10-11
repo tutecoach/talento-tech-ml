@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Credenciales, Tokens y Secretos (CRÍTICO)
+token.json
+credentials.json
+*.token
+*.key
+*.pem
+.env
+.env.*
+
+# Large datasets / local data (evitar subir gigabytes al repo)
+*.zip
+*.tar.gz
+*.rar
+03_recursos/datasets/*.csv
+03_recursos/datasets/*.parquet
+!03_recursos/datasets/.gitkeep
+
+# Pesos de modelos y binarios
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# Archivos de sistema / temporales
+.DS_Store
+Thumbs.db
+*.pdf
