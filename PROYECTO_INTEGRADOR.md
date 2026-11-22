@@ -33,33 +33,30 @@ El objetivo de la preentrega es validar la viabilidad del problema, la calidad d
 
 La entrega final consolida todo el ciclo de vida de Machine Learning **continuando sobre el mismo notebook de la Pre-Entrega** en Google Colab (no es un notebook nuevo).
 
-> **Documentos oficiales:** [`02_proyectos/proyecto_final/ML_Consigna_Entrega_Final.md`](02_proyectos/proyecto_final/ML_Consigna_Entrega_Final.md) · [`02_proyectos/proyecto_final/CHECKLIST_ENTREGA_FINAL.md`](02_proyectos/proyecto_final/CHECKLIST_ENTREGA_FINAL.md)
+> **Artefactos finales:** [`02_proyectos/proyecto_final/Pre_entrega26.ipynb`](02_proyectos/proyecto_final/Pre_entrega26.ipynb) · [`02_proyectos/proyecto_final/informe_final.md`](02_proyectos/proyecto_final/informe_final.md) · [`02_proyectos/proyecto_final/CHECKLIST_ENTREGA_FINAL.md`](02_proyectos/proyecto_final/CHECKLIST_ENTREGA_FINAL.md)
 
 ### Checklist de la Entrega Final:
 - [ ] **0. Requisitos Previos**:
-  - Completar el **cuestionario de autoevaluación del Campus Virtual** *(obligatorio)*.
-  - Abrir el notebook de la Pre-Entrega en Google Colab, ejecutar de principio a fin sin errores e incorporar feedback (si lo hubo).
-- [ ] **B1. Elección del Modelo**:
-  - Elegir al menos un modelo y justificar la elección según el tipo de problema (clasificación binaria).
-  - *(Opcional/Recomendado)* Sumar modelos adicionales para comparar (ej. Regresión Logística, Árbol de Decisión, Random Forest, KNN).
-- [ ] **B2. Entrenamiento**:
-  - Entrenar los modelos sobre el conjunto de entrenamiento y generar predicciones sobre el conjunto de prueba.
-- [ ] **B3. Evaluación con Métricas Adecuadas**:
-  - Clasificación: *accuracy*, *precisión*, *recall*, *F1-score* y matriz de confusión.
-  - Explicar qué significan los resultados y armar una tabla comparativa entre modelos.
-- [ ] **B4. Validación Cruzada (*Cross-Validation*)**:
-  - Aplicar *cross-validation* (ej. 5 folds estratificados), reportar media y desvío de las métricas y comparar contra el conjunto de prueba.
-- [ ] **B5. Visualización e Interpretación**:
-  - Gráficos de resultados (matrices de confusión, curvas comparativas, etc.) e importancia de variables (*Feature Importance*).
-  - Análisis de aciertos y errores del modelo (falsos positivos vs. falsos negativos) y sus posibles causas.
-- [ ] **B6. Conclusiones**:
-  - Reflexión sobre el modelo entrenado, límites del modelo, posibilidades de mejora y utilidad práctica del proyecto.
-- [ ] **B7. Anexo Final**:
-  - Link al dataset original, referencias de fuentes externas, descripción/links a archivos adicionales y aclaraciones necesarias.
+  - [ ] Completar el **cuestionario de autoevaluación del Campus Virtual** *(obligatorio)*.
+  - [x] Abrir el notebook de la Pre-Entrega en Google Colab, ejecutar de principio a fin sin errores e incorporar feedback (incluye corrección preventiva de `'Unnamed: 0'`).
+- [x] **B1. Elección del Modelo**:
+  - Elección justificada según clasificación binaria desbalanceada (`DummyClassifier`, Regresión Logística, KNN, Árbol de Decisión y Random Forest + experimento Audio vs. Audio+Género con `ColumnTransformer`).
+- [x] **B2. Entrenamiento**:
+  - Entrenamiento sobre `X_train` (`71,678` pistas) y predicciones sobre `X_test` (`17,920` pistas).
+- [x] **B3. Evaluación con Métricas Adecuadas**:
+  - Accuracy, Precisión, Recall, F1-Score, ROC-AUC, matrices de confusión y tabla comparativa maestra (ganador: `Random Forest Audio+Género`, `F1 = 0.6132`, `ROC-AUC = 0.8628`).
+- [x] **B4. Validación Cruzada (*Cross-Validation*)**:
+  - `StratifiedKFold(n_splits=5)` reportando media y desvío (`F1 CV = 0.6106 ± 0.0040`, `ROC-AUC CV = 0.8597 ± 0.0014`) comparado contra Test.
+- [x] **B5. Visualización e Interpretación**:
+  - Matrices de confusión comparativas, curvas ROC superpuestas, árbol de decisión (`plot_tree`), *Feature Importance* y análisis de TP/FP/FN sobre canciones reales.
+- [x] **B6. Conclusiones**:
+  - Reflexión sobre el modelo ganador, costos de errores, límites exógenos, mejoras futuras y utilidad práctica (+ Bonus K-Means `k=4`).
+- [x] **B7. Anexo Final**:
+  - Links al dataset en Kaggle/Drive, informe final en Drive, repositorio GitHub, referencias técnicas y aclaraciones metodológicas.
 - [ ] **Revisión y Entrega (No requiere presentación oral)**:
-  - Notebook organizado, bien comentado y ejecutado completo (*Entorno de ejecución → Ejecutar todo*).
-  - Carpeta en Google Drive nombrada `HERNANDEZ MATIAS H - Comisión 26240 - TPI Machine Learning` con sets de datos originales y el Colab, con permisos de **lectura públicos** y **edición para el instructor**.
-  - Link entregado en el Campus Virtual (apartado Entrega de Proyecto Final, Clase 16) dentro del plazo (7 días).
+  - [x] Notebook organizado, bien comentado y ejecutado completo localmente sin errores (`47` celdas).
+  - [ ] Verificar ejecución completa en Google Colab y configurar permisos de **lectura públicos** + **edición para el instructor** en la carpeta de Drive [`HERNANDEZ MATIAS H - Comisión 26240 - TPI Machine Learning`](https://drive.google.com/drive/folders/1qlKrshYD_2ZqjH_gToYyP0Jt4nvjdiUT).
+  - [ ] Entregar el enlace de la carpeta en el Campus Virtual (apartado Entrega de Proyecto Final, Clase 16) dentro del plazo.
 
 ---
 

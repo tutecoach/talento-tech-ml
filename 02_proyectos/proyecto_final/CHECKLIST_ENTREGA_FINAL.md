@@ -9,9 +9,9 @@
 ## 🔍 Antes de empezar
 
 - [ ] Completé el cuestionario de autoevaluación del Campus Virtual *(obligatorio)*
-- [ ] Abrí el notebook de la Pre-Entrega en Google Colab
-- [ ] Ejecutar de principio a fin sin errores
-- [ ] Incorporé el feedback de la Pre-Entrega *(si lo hubo)*
+- [x] Abrí el notebook de la Pre-Entrega en Google Colab *(continuado en [`Pre_entrega26.ipynb`](Pre_entrega26.ipynb) y subido a Colab)*
+- [x] Ejecutar de principio a fin sin errores *(validado en ejecución local completa: 20/20 celdas de código sin errores)*
+- [x] Incorporé el feedback de la Pre-Entrega *(si lo hubo — incluye descarte explícito de `'Unnamed: 0'`)*
 
 ---
 
@@ -51,51 +51,51 @@
 ## 🚀 Parte B: Entrega Final
 
 ### B1. Elección del modelo (Entrega Final)
-- [ ] Elegí al menos un modelo
-- [ ] Justifiqué la elección según el tipo de problema *(clasificación o regresión)*
-- [ ] *(Opcional)* Sumé un segundo modelo para comparar
+- [x] Elegí al menos un modelo
+- [x] Justifiqué la elección según el tipo de problema *(clasificación o regresión)*
+- [x] *(Opcional)* Sumé un segundo modelo para comparar *(5 familias supervisadas + experimento Audio vs. Audio+Género + bonus K-Means)*
 
 ### B2. Entrenamiento
-- [ ] Entrené con el conjunto de entrenamiento
-- [ ] Generé predicciones sobre el conjunto de prueba
+- [x] Entrené con el conjunto de entrenamiento
+- [x] Generé predicciones sobre el conjunto de prueba
 
 ### B3. Evaluación
-- [ ] Calculé métricas adecuadas al tipo de problema:
+- [x] Calculé métricas adecuadas al tipo de problema:
   - **Clasificación:** accuracy, precisión, recall, F1, matriz de confusión
   - **Regresión:** MAE, RMSE, R²
-- [ ] Expliqué qué significan los resultados
-- [ ] *(Si hay varios modelos)* Armé una tabla comparativa
+- [x] Expliqué qué significan los resultados
+- [x] *(Si hay varios modelos)* Armé una tabla comparativa
 
 ### B4. Validación cruzada
-- [ ] Apliqué cross-validation *(ej. 5 folds)*
-- [ ] Reporté media y desvío de las métricas
-- [ ] Comparé con los resultados del conjunto de prueba
+- [x] Apliqué cross-validation *(ej. 5 folds)*
+- [x] Reporté media y desvío de las métricas
+- [x] Comparé con los resultados del conjunto de prueba
 
 ### B5. Visualización e interpretación
-- [ ] Gráficos de resultados *(matriz de confusión, real vs. predicho, residuos, etc.)*
-- [ ] Importancia de variables *(si el modelo lo permite)*
-- [ ] Analicé aciertos y errores del modelo y sus posibles causas
+- [x] Gráficos de resultados *(matriz de confusión, real vs. predicho, residuos, etc.)*
+- [x] Importancia de variables *(si el modelo lo permite)*
+- [x] Analicé aciertos y errores del modelo y sus posibles causas
 
 ### B6. Conclusiones
-- [ ] Reflexión sobre el modelo entrenado
-- [ ] Límites del modelo
-- [ ] Posibilidades de mejora
-- [ ] Utilidad práctica del proyecto
+- [x] Reflexión sobre el modelo entrenado
+- [x] Límites del modelo
+- [x] Posibilidades de mejora
+- [x] Utilidad práctica del proyecto
 
 ### B7. Anexo final
-- [ ] Link al dataset
-- [ ] Referencias de fuentes externas *(si las hubo)*
-- [ ] Aclaraciones necesarias
+- [x] Link al dataset
+- [x] Referencias de fuentes externas *(si las hubo)*
+- [x] Aclaraciones necesarias
 
 ---
 
 ## 📋 Revisión antes de entregar
 
-- [ ] Notebook organizado con títulos y secciones claras
-- [ ] Código bien comentado
-- [ ] Cada sección tiene texto explicativo, código funcional y observaciones propias
-- [ ] Continúa el notebook de la Pre-Entrega *(no es uno nuevo)*
-- [ ] Ejecuta completo de arriba hacia abajo (*Entorno de ejecución → Ejecutar todo*)
-- [ ] Link de Colab con permisos correctos para quien corrige
-- [ ] No hace falta presentación oral: todo el análisis queda escrito en el notebook
+- [x] Notebook organizado con títulos y secciones claras
+- [x] Código bien comentado
+- [x] Cada sección tiene texto explicativo, código funcional y observaciones propias
+- [x] Continúa el notebook de la Pre-Entrega *(no es uno nuevo)*
+- [ ] Ejecuta completo de arriba hacia abajo (*Entorno de ejecución → Ejecutar todo* en Google Colab — ya validado localmente 100%)
+- [ ] Link de Colab con permisos correctos para quien corrige *(pendiente confirmar permisos de lectura pública + edición para el instructor en Drive)*
+- [x] No hace falta presentación oral: todo el análisis queda escrito en el notebook
 - [ ] Entregado en el campus virtual dentro del plazo

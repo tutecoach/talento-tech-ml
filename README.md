@@ -78,7 +78,9 @@ flowchart LR
 │   │   ├── informe_preentrega.md       # Memoria técnica ejecutiva
 │   │   ├── ML_Consigna_Pre-entrega.md  # Rúbrica y consigna oficial
 │   │   └── README.md
-│   └── proyecto_final/                 # 🏆 Hito 2: Entrega Final (en preparación)
+│   └── proyecto_final/                 # 🏆 Hito 2: Entrega Final (completada)
+│       ├── Pre_entrega26.ipynb         # Cuaderno continuado (47 celdas ejecutadas, B1–B7 + K-Means)
+│       ├── informe_final.md            # Memoria técnica y ejecutiva final
 │       ├── ML_Consigna_Entrega_Final.md
 │       ├── CHECKLIST_ENTREGA_FINAL.md
 │       ├── ML - Checklist Entrega Final.docx
@@ -95,25 +97,30 @@ flowchart LR
 
 ---
 
-## 🚀 Hoja de Ruta para la Entrega Final
+## 🏆 Resultados de la Entrega Final
 
-Continuando sobre el mismo cuaderno de Pre-Entrega (`Pre_entrega26.ipynb` en Google Colab), la etapa final cubre:
+Continuando sobre el mismo cuaderno de Pre-Entrega (`89,598` pistas únicas; `71,678` Train / `17,920` Test; `22.25%` Hits y corrección de `'Unnamed: 0'` para evitar *index leakage*), se compararon modelos base, optimizados con `GridSearchCV` + `Pipeline` y enriquecidos con `track_genre` mediante `ColumnTransformer`:
 
-1. **Elección y Entrenamiento de Modelos (B1–B2):**
-   - Selección justificada según clasificación binaria (comparando **Regresión Logística**, **Árbol de Decisión**, **Random Forest** y/o **KNN** + `GridSearchCV` / `Pipeline`).
-2. **Evaluación y Validación Cruzada (B3–B4):**
-   - Métricas sobre test (*accuracy*, *precision*, *recall*, *F1-score*, matriz de confusión) y tabla comparativa.
-   - *Cross-validation* estratificada (ej. 5 folds) reportando media, desvío y contraste frente al conjunto de prueba.
-3. **Visualización, Interpretación y Conclusiones (B5–B7):**
-   - Matrices de confusión, importancia de variables (*Feature Importance*), análisis de aciertos/errores, límites, mejoras futuras, utilidad práctica y **Anexo final** con links y referencias *(no requiere presentación oral)*.
+| Modelo Evaluado | F1 CV (5-Fold) | ROC-AUC CV (5-Fold) | Accuracy Test | F1-Score (Hit) | ROC-AUC Test |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| `0. Baseline (Dummy Most Frequent)` | `0.0000 ± 0.0000` | `0.5000 ± 0.0000` | `0.7775` | `0.0000` | `0.5000` |
+| `1b. Regresión Logística (Opt - Solo Audio)` | `0.3927 ± 0.0051` | `0.6280 ± 0.0045` | `0.5731` | `0.3970` | `0.6336` |
+| `2b. KNN (Opt - Solo Audio)` | `0.2819 ± 0.0077` | `0.6347 ± 0.0050` | `0.7527` | `0.3016` | `0.6421` |
+| `3b. Árbol de Decisión (Opt - Solo Audio)` | `0.4120 ± 0.0029` | `0.6414 ± 0.0021` | `0.5591` | `0.4152` | `0.6436` |
+| `4b. Random Forest (Opt - Solo Audio)` | `0.4441 ± 0.0025` | `0.7005 ± 0.0028` | `0.6333` | `0.4470` | `0.7049` |
+| `5. Regresión Logística (Opt - Audio+Género)` | `0.5642 ± 0.0060` | `0.8316 ± 0.0042` | `0.7230` | `0.5625` | `0.8324` |
+| **`6. Random Forest (Opt - Audio+Género)`** 🏆 | **`0.6106 ± 0.0040`** | **`0.8597 ± 0.0014`** | **`0.8094`** | **`0.6132`** | **`0.8628`** |
+
+- **Bonus Clustering No Supervisado (`K-Means`, `k = 4`, Silhouette = `0.3175`):** el *Cluster 1* (*Mainstream Pop, Dance & Urbano Comercial*) concentra un **`25.61%` de Hits**, más del doble que el *Cluster 0* instrumental energético (`11.99%`).
+- Ver memoria completa en [`02_proyectos/proyecto_final/informe_final.md`](02_proyectos/proyecto_final/informe_final.md).
 
 ---
 
 ## 💻 Cómo Ejecutar este Proyecto
 
-### Opción 1: En la Nube (Recomendado)
-Haz clic en el siguiente botón para abrir el cuaderno directamente en **Google Colab**:  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Zff5mrXXnKZtKsUyN2mEs869GO3ItfZX)
+### Opción 1: En la Nube (Google Colab)
+- **Entrega Final (Completo — Parte A + Parte B):** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xuc2NMKoCCsg2QH1H7RNSqadfTVYN0HF)
+- **Pre-Entrega Original (Hito 1 archivado):** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Zff5mrXXnKZtKsUyN2mEs869GO3ItfZX)
 
 ### Opción 2: Localmente
 ```bash
