@@ -4,7 +4,7 @@
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.3%2B-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243?logo=numpy&logoColor=white)](https://numpy.org/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Zff5mrXXnKZtKsUyN2mEs869GO3ItfZX)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xuc2NMKoCCsg2QH1H7RNSqadfTVYN0HF)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Proyecto Integrador de Machine Learning** — Especialización Avanzada en Inteligencia Artificial y Ciencia de Datos (**Talento Tech** | Comisión #26240).  
@@ -36,9 +36,9 @@ flowchart LR
 - **Tipo de Tarea:** Aprendizaje Supervisado — **Clasificación Binaria**.
 - **Dataset:** [Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset) recopilado por Maharshi Pandya vía Spotify Web API (~114.000 observaciones, 21 columnas).
 - **Target (`is_hit`):** 
-  - `1` (**Hit**): Pista con índice de popularidad superior a 50 (`popularity > 50`), representando el cuartil superior de impacto comercial ($\approx 21.5\%$).
-  - `0` (**No Hit / Nicho**): Canción de catálogo estándar o nicho ($\approx 78.5\%$).
-- **Espacio de Características ($X$):** Atributos perceptuales objetivos: `danceability`, `energy`, `loudness`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, `tempo`, `explicit`, `mode`, `key`, `duration_ms`, `time_signature`.
+  - `1` (**Hit**): Pista con índice de popularidad superior a 50 (`popularity > 50`), representando el segmento de mayor impacto comercial (**22,25%** del dataset depurado).
+  - `0` (**No Hit / Nicho**): Canción de catálogo estándar o nicho (**77,75%**).
+- **Espacio de Características ($X$):** Atributos perceptuales objetivos (*Solo Audio*, 14 variables): `danceability`, `energy`, `loudness`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, `tempo`, `explicit`, `mode`, `key`, `duration_ms`, `time_signature`, ampliado en la iteración final con `track_genre` vía `ColumnTransformer` + `OneHotEncoder`.
 
 ---
 
@@ -53,8 +53,8 @@ flowchart LR
   - Baja correlación lineal individual entre atributos aislados y popularidad ($|r| < 0.15$), evidenciando que el éxito depende de **interacciones no lineales complejas** y justificando la adopción de algoritmos de Machine Learning.
 
 ### 2. Curación y Limpieza de Datos
-- **Desduplicación Lógica por `track_id`:** Eliminación de redundancias causadas por la aparición de una misma pista en múltiples recopilatorios o playlists de género, erradicando el riesgo de contaminación cruzada.
-- **Filtrado de Inconsistencias Físicas:** Eliminación de canciones con duración $0$ ms o anomalías temporales ($10\text{ s} \le \text{duración} \le 15\text{ min}$), reteniendo más del $90\%$ de los datos válidos.
+- **Desduplicación Lógica por `track_id`:** Eliminación de **24.259** registros redundantes causados por la aparición de una misma pista en múltiples recopilatorios o playlists de género, erradicando el riesgo de contaminación cruzada.
+- **Filtrado de Inconsistencias y Prevención de *Index Leakage*:** Eliminación de 3 filas con nulos marginales y 142 anomalías de duración ($< 10\text{ s}$ o $> 15\text{ min}$), consolidando **89.598 pistas únicas** (**78,59%** de retención). Además, se descartó explícitamente la columna índice `Unnamed: 0` (ordenada por género en el CSV) para impedir fuga por ordenamiento.
 
 ### 3. Prevención de Fuga de Información (*Zero Data Leakage*)
 - **Regla de oro respetada:** La separación en subconjuntos de entrenamiento y prueba se ejecutó **antes** de cualquier procedimiento de escalado o normalización.
@@ -90,6 +90,11 @@ flowchart LR
 │   ├── cronograma/
 │   └── BASE_CONOCIMIENTO.md
 ├── 04_colab_sync/                      # Scripts de sincronización con Google Drive
+├── assets/                             # Gráficos exportados de resultados para portafolio
+│   ├── curvas_roc_auc.png
+│   ├── feature_importance.png
+│   ├── kmeans_clusters_heatmap.png
+│   └── matrices_confusion.png
 ├── CALENDARIO_CURSADA.md               # Calendario oficial de cursada y entregas
 ├── PROYECTO_INTEGRADOR.md              # Checklist metodológico y rúbricas
 └── README.md                           # Portada y documentación de portfolio
@@ -114,6 +119,20 @@ Continuando sobre el mismo cuaderno de Pre-Entrega (`89,598` pistas únicas; `71
 - **Bonus Clustering No Supervisado (`K-Means`, `k = 4`, Silhouette = `0.3175`):** el *Cluster 1* (*Mainstream Pop, Dance & Urbano Comercial*) concentra un **`25.61%` de Hits**, más del doble que el *Cluster 0* instrumental energético (`11.99%`).
 - Ver memoria completa en [`02_proyectos/proyecto_final/informe_final.md`](02_proyectos/proyecto_final/informe_final.md).
 
+### 📊 Visualizaciones Clave
+
+#### Curvas ROC-AUC Comparativas (*Solo Audio vs. Audio + Género*)
+![Curvas ROC-AUC](assets/curvas_roc_auc.png)
+
+#### Matrices de Confusión Comparativas sobre Test (`n = 17,920`)
+![Matrices de Confusión](assets/matrices_confusion.png)
+
+#### Importancia Relativa de Variables (*Random Forest Optimizado*)
+![Importancia de Variables](assets/feature_importance.png)
+
+#### Perfil Acústico Promedio por Cluster (`K-Means`, `k = 4`)
+![Heatmap K-Means](assets/kmeans_clusters_heatmap.png)
+
 ---
 
 ## 💻 Cómo Ejecutar este Proyecto
@@ -136,7 +155,7 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 pip install pandas numpy scikit-learn matplotlib seaborn kagglehub jupyter
 
 # 4. Iniciar Jupyter Notebook
-jupyter notebook 02_proyectos/preentrega/Pre_entrega26.ipynb
+jupyter notebook 02_proyectos/proyecto_final/Pre_entrega26.ipynb
 ```
 
 ---
