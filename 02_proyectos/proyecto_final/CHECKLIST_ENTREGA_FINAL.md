@@ -8,7 +8,7 @@
 
 ## 🔍 Antes de empezar
 
-- [ ] Completé el cuestionario de autoevaluación del Campus Virtual *(obligatorio)*
+- [x] Completé el cuestionario de autoevaluación del Campus Virtual *(obligatorio)*
 - [x] Abrí el notebook de la Pre-Entrega en Google Colab *(continuado en [`Pre_entrega26.ipynb`](Pre_entrega26.ipynb) y subido a Colab)*
 - [x] Ejecutar de principio a fin sin errores *(validado en ejecución local completa: 20/20 celdas de código sin errores)*
 - [x] Incorporé el feedback de la Pre-Entrega *(si lo hubo — incluye descarte explícito de `'Unnamed: 0'`)*
@@ -95,7 +95,7 @@
 - [x] Código bien comentado
 - [x] Cada sección tiene texto explicativo, código funcional y observaciones propias
 - [x] Continúa el notebook de la Pre-Entrega *(no es uno nuevo)*
-- [ ] Ejecuta completo de arriba hacia abajo (*Entorno de ejecución → Ejecutar todo* en Google Colab — ya validado localmente 100%)
-- [ ] Link de Colab con permisos correctos para quien corrige *(pendiente confirmar permisos de lectura pública + edición para el instructor en Drive)*
+- [x] Ejecuta completo de arriba hacia abajo (*Entorno de ejecución → Ejecutar todo* en Google Colab — validado localmente y en Colab)
+- [x] Link de Colab con permisos correctos para quien corrige *(lectura pública `anyone` + edición `writer` para `maximiliano.torreblanca@bue.edu.ar` configurados y auditados en Drive)*
 - [x] No hace falta presentación oral: todo el análisis queda escrito en el notebook
 - [ ] Entregado en el campus virtual dentro del plazo

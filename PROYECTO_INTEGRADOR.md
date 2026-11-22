@@ -36,8 +36,8 @@ La entrega final consolida todo el ciclo de vida de Machine Learning **continuan
 > **Artefactos finales:** [`02_proyectos/proyecto_final/Pre_entrega26.ipynb`](02_proyectos/proyecto_final/Pre_entrega26.ipynb) · [`02_proyectos/proyecto_final/informe_final.md`](02_proyectos/proyecto_final/informe_final.md) · [`02_proyectos/proyecto_final/CHECKLIST_ENTREGA_FINAL.md`](02_proyectos/proyecto_final/CHECKLIST_ENTREGA_FINAL.md)
 
 ### Checklist de la Entrega Final:
-- [ ] **0. Requisitos Previos**:
-  - [ ] Completar el **cuestionario de autoevaluación del Campus Virtual** *(obligatorio)*.
+- [x] **0. Requisitos Previos**:
+  - [x] Completar el **cuestionario de autoevaluación del Campus Virtual** *(obligatorio)*.
   - [x] Abrir el notebook de la Pre-Entrega en Google Colab, ejecutar de principio a fin sin errores e incorporar feedback (incluye corrección preventiva de `'Unnamed: 0'`).
 - [x] **B1. Elección del Modelo**:
   - Elección justificada según clasificación binaria desbalanceada (`DummyClassifier`, Regresión Logística, KNN, Árbol de Decisión y Random Forest + experimento Audio vs. Audio+Género con `ColumnTransformer`).
@@ -54,8 +54,8 @@ La entrega final consolida todo el ciclo de vida de Machine Learning **continuan
 - [x] **B7. Anexo Final**:
   - Links al dataset en Kaggle/Drive, informe final en Drive, repositorio GitHub, referencias técnicas y aclaraciones metodológicas.
 - [ ] **Revisión y Entrega (No requiere presentación oral)**:
-  - [x] Notebook organizado, bien comentado y ejecutado completo localmente sin errores (`47` celdas).
-  - [ ] Verificar ejecución completa en Google Colab y configurar permisos de **lectura públicos** + **edición para el instructor** en la carpeta de Drive [`HERNANDEZ MATIAS H - Comisión 26240 - TPI Machine Learning`](https://drive.google.com/drive/folders/1qlKrshYD_2ZqjH_gToYyP0Jt4nvjdiUT).
+  - [x] Notebook organizado, bien comentado y ejecutado completo en local y en Google Colab (`47` celdas sin errores).
+  - [x] Permisos configurados en la carpeta de Drive [`HERNANDEZ MATIAS H - Comisión 26240 - TPI Machine Learning`](https://drive.google.com/drive/folders/1qlKrshYD_2ZqjH_gToYyP0Jt4nvjdiUT): **lectura pública** (`anyone` reader) y **edición** para `maximiliano.torreblanca@bue.edu.ar`.
   - [ ] Entregar el enlace de la carpeta en el Campus Virtual (apartado Entrega de Proyecto Final, Clase 16) dentro del plazo.
 
 ---
