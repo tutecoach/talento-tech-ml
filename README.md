@@ -66,8 +66,11 @@ flowchart LR
 ## 📂 Estructura del Repositorio
 
 ```text
-├── 01_clases/                          # Bitácora teórica de Clases 01 a 08 (Markdown)
-│   ├── ML - CLASE 01.md a 08.md
+├── 01_clases/                          # Bitácora teórica, ejercicios y Colabs (Clases 01 a 16)
+│   ├── ML - CLASE 01.md a 08.md, 10.md a 16.md
+│   ├── ML CLASE _ 10.pdf a 16.pdf      # Respaldos PDF locales (gitignored)
+│   ├── ejercicios/                     # Guías prácticas (Clases 07–08, 10–15 y K-Means)
+│   ├── colabs/                         # Cuadernos .ipynb de clase (Clase 09)
 │   └── README.md
 ├── 02_proyectos/
 │   ├── preentrega/                     # 🚀 Hito 1: Pre-Entrega de Proyecto
@@ -75,7 +78,11 @@ flowchart LR
 │   │   ├── informe_preentrega.md       # Memoria técnica ejecutiva
 │   │   ├── ML_Consigna_Pre-entrega.md  # Rúbrica y consigna oficial
 │   │   └── README.md
-│   └── proyecto_final/                 # 🏆 Hito 2: Entrega Final (en desarrollo)
+│   └── proyecto_final/                 # 🏆 Hito 2: Entrega Final (en preparación)
+│       ├── ML_Consigna_Entrega_Final.md
+│       ├── CHECKLIST_ENTREGA_FINAL.md
+│       ├── ML - Checklist Entrega Final.docx
+│       ├── ML_Referencia_Docente_Pre_entrega26.ipynb
 │       └── README.md
 ├── 03_recursos/                        # Cronogramas y base de conocimiento
 │   ├── cronograma/
@@ -90,15 +97,15 @@ flowchart LR
 
 ## 🚀 Hoja de Ruta para la Entrega Final
 
-Con el pipeline de preprocesamiento consolidado, la segunda etapa abordará:
+Continuando sobre el mismo cuaderno de Pre-Entrega (`Pre_entrega26.ipynb` en Google Colab), la etapa final cubre:
 
-1. **Modelo Baseline:** `DummyClassifier` con estrategia de clase mayoritaria.
-2. **Modelado Comparativo Supervisado:**
-   - **K-Nearest Neighbors (KNN):** Optimización de hiperparámetro $k$ y ponderación por distancia euclidiana (Clase 8).
-   - **Regresión Logística:** Clasificación probabilística con regularización L2.
-   - **Árboles de Decisión y Random Forest:** Modelos de ensamble para medir la importancia relativa de variables (*Feature Importance*).
-3. **Métricas de Rendimiento:** *Precision*, *Recall*, *F1-score*, matriz de confusión y curvas *ROC-AUC*.
-4. **Storytelling de Negocio:** Conclusiones estratégicas aplicables a la producción y curaduría musical basada en datos.
+1. **Elección y Entrenamiento de Modelos (B1–B2):**
+   - Selección justificada según clasificación binaria (comparando **Regresión Logística**, **Árbol de Decisión**, **Random Forest** y/o **KNN** + `GridSearchCV` / `Pipeline`).
+2. **Evaluación y Validación Cruzada (B3–B4):**
+   - Métricas sobre test (*accuracy*, *precision*, *recall*, *F1-score*, matriz de confusión) y tabla comparativa.
+   - *Cross-validation* estratificada (ej. 5 folds) reportando media, desvío y contraste frente al conjunto de prueba.
+3. **Visualización, Interpretación y Conclusiones (B5–B7):**
+   - Matrices de confusión, importancia de variables (*Feature Importance*), análisis de aciertos/errores, límites, mejoras futuras, utilidad práctica y **Anexo final** con links y referencias *(no requiere presentación oral)*.
 
 ---
 

@@ -2,16 +2,16 @@
 
 ---
 
-## 1. 📁 Google Drive (Servidor MCP `gdrive`) — ✅ CONECTADO Y OPERATIVO
+## 1. 📁 Google Drive (Servidor MCP / CLI `gdrive`) — ✅ CONECTADO Y SINCRONIZADO
 
-Google Drive está completamente sincronizado. Se ha localizado e indexado el árbol de carpetas del curso:
+Google Drive está completamente sincronizado con el repositorio local. Estructura indexada del curso:
 - **Carpeta Principal:** `Machine learning` (ID: `1J0UZv6eVfVS5wiWrxY4-kC9mclB4dlLd`)
 - **Documento Clave:** `INFO MACHINE LEARNING` (Comisión #26240, ID Zoom, contactos docentes)
 - **Subcarpetas Vinculadas:**
-  - `01_Clases`: Teóricos y resúmenes en Markdown y PDF (Clases 01 a 06).
-  - `02_Ejercicios_y_Practicas`: Ejercicios prácticos en PDF (Clases 01 a 06).
-  - `03_Proyectos_y_Entregables`: Cuaderno de la preentrega (`Pre_entrega26.ipynb`).
-  - `04_Colab_Notebooks`: Cuadernos interactivos de las clases (`Clase_5.ipynb`, `Clase_6.ipynb`, `Clase_8.ipynb`, etc.).
+  - `01_Clases` (`1MarNh0EPP4x5nq8z2VC3tmniObbVWLHf`): Teóricos y resúmenes en Markdown y PDF (Clases 01 a 08 y 10 a 16). *Pendiente teórico de Clase 09.*
+  - `02_Ejercicios_y_Practicas` (`16WQHww4NzqpwEobl_I6BnQhtsLXWOtxQ`): Ejercicios prácticos en PDF (Clases 01 a 08), en Markdown (Clases 07, 08 y 10 a 15) y `Practica_K-Means.md`.
+  - `03_Proyectos_y_Entregables` (`1Pqr-AtRrUv_YoEv_W4YXnXf2bzedrObe`): Preentrega (`HERNANDEZ MATIAS H - Comisión 26240 - TPI Data Analytics/`, `ML - Consigna Pre-entrega.*`) y Entrega Final (`ML_Consigna_Entrega_Final.md`, `ML - Checklist Entrega Final.docx`, `CHECKLIST_ENTREGA_FINAL.md` y `ML_Referencia_Docente_Pre_entrega26.ipynb`).
+  - `04_Colab_Notebooks` (`1bL2wThSTkSCxYubNOsjx83WZk_Xn2gD1`): Cuadernos interactivos de las clases (`Copia de clase4_2026b.ipynb`, `Clase_5.ipynb`, `Clase_6.ipynb`, `Copia de (Alumnos)Clase_7.ipynb`, `Clase_8.ipynb`, `Copia de (Alumnos)Clase_9.ipynb`, `Copia de (Nuevo26)clase_9b.ipynb`, entre otros).
 
 ---
 
